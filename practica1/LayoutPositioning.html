@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Posicionamiento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Establece el contexto de posicionamiento */
+            height: 100vh; /* Altura total de la ventana */
+        }
+
+        .header {
+            background-color: #4CAF50; /* Color de fondo del encabezado */
+            color: white; /* Color del texto */
+            padding: 20px; /* Relleno interno del encabezado */
+            text-align: center; /* Centra el texto */
+            position: relative; /* Posicionamiento relativo */
+        }
+
+        .sidebar {
+            background-color: #f4f4f4; /* Color de fondo de la barra lateral */
+            width: 200px; /* Ancho de la barra lateral */
+            position: absolute; /* Posicionamiento absoluto */
+            top: 60px; /* Distancia desde la parte superior */
+            left: 0; /* Alineación a la izquierda */
+            bottom: 0; /* Extiende hasta el fondo */
+            padding: 20px; /* Relleno interno de la barra lateral */
+        }
+
+        .content {
+            margin-left: 220px; /* Espacio para la barra lateral */
+            padding: 20px; /* Relleno interno del contenido */
+            height: calc(100vh - 60px); /* Altura del contenido */
+            overflow-y: auto; /* Permite el desplazamiento vertical */
+        }
+
+        .footer {
+            background-color: #333; /* Color de fondo del pie de página */
+            color: white; /* Color del texto */
+            padding: 10px; /* Relleno interno del pie de página */
+            text-align: center; /* Centra el texto */
+            position: absolute; /* Posicionamiento absoluto */
+            bottom: 0; /* Alineación al fondo */
+            left: 0; /* Alineación a la izquierda */
+            right: 0; /* Alineación a la derecha */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Encabezado</h1>
+    </header>
+    <div class="sidebar">
+        <h2>Barra Lateral</h2>
+        <p>Contenido de la barra lateral.</p>
+    </div>
+    <main class="content">
+        <h2>Contenido Principal</h2>
+        <p>Este es el contenido principal de la página. Aquí puedes agregar más información.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+        <p>Más contenido para mostrar el desplazamiento.</p>
+    </main>
+    <footer class="footer">
+        <p>Pie de página</p>
+    </footer>
+</body>
+</html>

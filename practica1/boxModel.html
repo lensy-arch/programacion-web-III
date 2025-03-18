@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Box Model</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y alto total */
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 80%; /* Ancho del contenedor */
+        margin: 0 auto; /* Centra el contenedor */
+        padding: 20px; /* Relleno interno del contenedor */
+        border: 5px solid #333; /* Borde del contenedor */
+    }
+
+    .header {
+        background-color: #4CAF50; /* Color de fondo del encabezado */
+        color: white; /* Color del texto */
+        padding: 10px; /* Relleno interno del encabezado */
+        margin-bottom: 20px; /* Margen inferior del encabezado */
+        border: 5px solid #333; /* Borde del contenedor */
+    }
+
+    .content {
+        background-color: #f4f4f4; /* Color de fondo del contenido */
+        padding: 20px; /* Relleno interno del contenido */
+        margin-bottom: 20px; /* Margen inferior del contenido */
+    }
+
+    .footer {
+        background-color: #333; /* Color de fondo del pie de página */
+        color: white; /* Color del texto */
+        padding: 10px; /* Relleno interno del pie de página */
+    }
+</style>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Encabezado</h1>
+        </header>
+        <main class="content">
+            <p>Este es el contenido principal de la página.</p>
+        </main>
+        <footer class="footer">
+            <p>Pie de página</p>
+        </footer>
+    </div>
+</body>
+</html>

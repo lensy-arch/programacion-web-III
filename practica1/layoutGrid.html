@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Grid con Dos Columnas y Filas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* Fila para el encabezado, contenido y pie de página */
+            grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+            height: 100vh; /* Altura total de la ventana */
+        }
+
+        .header {
+            grid-column: 1 / -1; /* El encabezado ocupa ambas columnas */
+            background-color: #4CAF50; /* Color de fondo del encabezado */
+            color: white; /* Color del texto */
+            padding: 20px; /* Relleno interno del encabezado */
+            text-align: center; /* Centra el texto */
+        }
+
+        .content {
+            display: contents; /* Permite que los hijos se comporten como si fueran hijos directos del grid */
+        }
+
+        .section {
+            padding: 20px; /* Relleno interno de las secciones */
+            background-color: #f4f4f4; /* Color de fondo de las secciones */
+            border: 1px solid #ccc; /* Borde de las secciones */
+            border-radius: 5px; /* Bordes redondeados */
+            margin: 10px; /* Margen entre secciones */
+        }
+
+        .footer {
+            grid-column: 1 / -1; /* El pie de página ocupa ambas columnas */
+            background-color: #333; /* Color de fondo del pie de página */
+            color: white; /* Color del texto */
+            padding: 10px; /* Relleno interno del pie de página */
+            text-align: center; /* Centra el texto */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Encabezado</h1>
+    </header>
+    <main class="content">
+        <div class="section">
+            <h2>Sección 1</h2>
+            <p>Contenido de la primera sección.</p>
+        </div>
+        <div class="section">
+            <h2>Sección 2</h2>
+            <p>Contenido de la segunda sección.</p>
+        </div>
+        <div class="section">
+            <h2>Sección 3</h2>
+            <p>Contenido de la segunda sección.</p>
+        </div>
+        <div class="section">
+            <h2>Sección 4</h2>
+            <p>Contenido de la segunda sección.</p>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Pie de página</p>
+    </footer>
+</body>
+</html>
