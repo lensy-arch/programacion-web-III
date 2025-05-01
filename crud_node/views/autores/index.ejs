@@ -1,0 +1,96 @@
+<%- include('../partials/head') %>
+<div class="container bg-white p-4 rounded shadow-sm">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Gestión de Autores</h2>
+    <a href="/autores/new" class="btn btn-primary">Agregar Autor</a>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Nacionalidad</th>
+        <th>Fecha Nacimiento</th>
+        <th>Biografía</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% autores.forEach(a => { %>
+        <tr>
+          <td><%= a.nombre %></td>
+          <td><%= a.nacionalidad || '-' %></td>
+          <td>
+            <%= a.fecha_nacimiento
+                  ? a.fecha_nacimiento.toISOString().slice(0,10)
+                  : '-' %>
+          </td>
+          <td>
+            <%= a.biografia
+                  ? (a.biografia.length > 50
+                      ? a.biografia.substring(0,50) + '...'
+                      : a.biografia)
+                  : '-' %>
+          </td>
+          <td>
+            <button
+              class="btn btn-sm btn-success me-1"
+              data-bs-toggle="modal"
+              data-bs-target="#librosModal-<%= a.id_autor %>">
+              Ver libros
+            </button>
+            <a
+              href="/autores/<%= a.id_autor %>/edit"
+              class="btn btn-sm btn-info text-white me-1">
+              Editar
+            </a>
+            <form
+              action="/autores/<%= a.id_autor %>?_method=DELETE"
+              method="POST"
+              class="d-inline">
+              <button type="submit" class="btn btn-sm btn-danger">
+                Eliminar
+              </button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <!-- Modales de Libros (fuera de la tabla) -->
+  <% autores.forEach(a => { %>
+    <div
+      class="modal fade"
+      id="librosModal-<%= a.id_autor %>"
+      tabindex="-1"
+      aria-labelledby="librosLabel-<%= a.id_autor %>"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="librosLabel-<%= a.id_autor %>">
+              Libros de <%= a.nombre %>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-unstyled">
+              <% if (librosPorAutor[a.id_autor] && librosPorAutor[a.id_autor].length) { %>
+                <% librosPorAutor[a.id_autor].forEach(l => { %>
+                  <li>• <%= l.titulo %> (<%= l.año_publicacion || 'N/A' %>)</li>
+                <% }) %>
+              <% } else { %>
+                <li><em>No hay libros registrados.</em></li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>

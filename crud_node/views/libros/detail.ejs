@@ -1,0 +1,10 @@
+<%- include('../partials/head') %>
+<div class="container bg-white p-4 rounded shadow-sm">
+  <h2>Detalle Libro</h2>
+  <p><strong>Título:</strong> <%= libro.titulo %></p>
+  <p><strong>Año Publicación:</strong> <%= libro.año_publicacion || '-' %></p>
+  <p><strong>Género:</strong> <%= libro.genero || '-' %></p>
+  <p><strong>Resumen:</strong> <%= libro.resumen || '-' %></p>
+  <p><strong>Autor:</strong> <%= libro.id_autor ? libro.id_autor : 'N/A' %></p>
+  <a href="/libros" class="btn btn-secondary">Volver</a>
+</div>

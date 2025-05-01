@@ -1,0 +1,35 @@
+<%- include('../partials/head') %>
+<div class="container bg-white p-4 rounded shadow-sm">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Libros</h2>
+    <a href="/libros/new" class="btn btn-primary">Agregar Libro</a>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Año Publicación</th>
+        <th>Género</th>
+        <th>Autor</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% libros.forEach(l => { %>
+        <tr>
+          <td><%= l.titulo %></td>
+          <td><%= l.año_publicacion || '-' %></td>
+          <td><%= l.genero || '-' %></td>
+          <td><%= l.autor_nombre || 'N/A' %></td>
+          <td>
+            <a href="/libros/<%= l.id_libro %>" class="btn btn-sm btn-info text-white me-1">Ver</a>
+            <a href="/libros/<%= l.id_libro %>/edit" class="btn btn-sm btn-warning me-1">Editar</a>
+            <form action="/libros/<%= l.id_libro %>?_method=DELETE" method="POST" class="d-inline">
+              <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

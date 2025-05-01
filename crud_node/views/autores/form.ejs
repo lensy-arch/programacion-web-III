@@ -1,0 +1,26 @@
+<%- include('../partials/head') %>
+<div class="container bg-white p-4 rounded shadow-sm">
+  <h2><%= autor.id_autor ? 'Editar Autor' : 'Nuevo Autor' %></h2>
+  <form action="<%= autor.id_autor ? '/autores/' + autor.id_autor + '?_method=PUT' : '/autores' %>" method="POST">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" name="nombre" class="form-control" value="<%= autor.nombre || '' %>" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nacionalidad</label>
+      <input type="text" name="nacionalidad" class="form-control" value="<%= autor.nacionalidad || '' %>">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Fecha de Nacimiento</label>
+      <input type="date" name="fecha_nacimiento" class="form-control" value="<%= autor.fecha_nacimiento ? autor.fecha_nacimiento.toISOString().slice(0,10) : '' %>">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Biografía</label>
+      <textarea name="biografia" class="form-control"><%= autor.biografia || '' %></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">
+      <%= autor.id_autor ? 'Actualizar' : 'Crear' %>
+    </button>
+    <a href="/autores" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
