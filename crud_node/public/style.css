@@ -1,0 +1,70 @@
+/* style.css */
+
+/* Fondo general */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilo de tabla */
+  .table-hover tbody tr:hover {
+    background-color: #e9ecef;
+  }
+  
+  .table thead th {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Botones con espacio entre ellos */
+  .btn + .btn {
+    margin-left: 8px;
+  }
+  
+  /* Etiquetas de formulario */
+  .form-label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  /* Botón primario personalizado */
+  .btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #5936a2;
+    border-color: #5936a2;
+  }
+  
+  /* Botón de éxito personalizado */
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  
+  /* Título principal */
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #343a40;
+    font-size: 1.75rem;
+  }
+  
